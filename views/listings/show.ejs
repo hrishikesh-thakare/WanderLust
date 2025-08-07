@@ -1,21 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WanderLust</title>
-</head>
+<% layout("/layouts/boilerplate") %>
 <body>
-    <h3>Listing Details</h3>
-    <ul>
-        <li>Title:</strong> <%= listing.title %></li>
-        <li>Description: <%= listing.description %></li>
-        <li>Price: &#x20B9 <%= listing.price.toLocaleString("en-IN") %></li>
-        <li>Location: <%= listing.location %></li>
-    </ul>
-    <a href="/listings/<%= listing._id %>/edit">Edit this Listing</a>
-    <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
-        <button>Delete this listing</button>
-    </form>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8 col-lg-6">
+            <h3 class="mb-4"><b>Listing Details for <%= listing.title %></b></h3>
+            <div class="card">
+                <img src="<%= listing.image %>" class="card-img-top show-img" alt="listing_image">
+                <div class="card-body">
+                    <!-- <h6 class="card-title"><%= listing.title %></h6> -->
+                    <ul class="list-group list-group-flush mb-3">
+                        <li class="list-group-item"><strong>Description:</strong> <%= listing.description %></li>
+                        <li class="list-group-item"><strong>Price:</strong> &#x20B9; <%= listing.price.toLocaleString("en-IN") %></li>
+                        <li class="list-group-item"><strong>Location:</strong> <%= listing.location %></li>
+                    </ul>
+                    <a href="/listings/<%= listing._id %>/edit" class="btn show-btn me-2">Edit this Listing</a>
+                    <form class="d-inline" method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+                        <button class="btn btn-dark">Delete this listing</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-</html>
