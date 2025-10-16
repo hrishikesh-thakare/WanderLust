@@ -7,9 +7,14 @@ const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError");
 const session = require("express-session");
 const flash = require("connect-flash");
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
+const User = require("./models/user");
 
-const listings = require("./routes/listing");
-const reviews = require("./routes/review");
+// Importing routes
+const listingRouter = require("./routes/listing");
+const reviewRouter = require("./routes/review");
+const userRouter = require("./routes/user");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -40,9 +45,19 @@ const sessionOptions = {
   },
 };
 
+// Session and flash middleware
 app.use(session(sessionOptions));
 app.use(flash());
 
+// Passport.js configuration
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+// Middleware to set flash messages
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
@@ -54,8 +69,9 @@ app.get("/", (req, res) => {
 });
 
 // Using the routes
-app.use("/listings", listings);
-app.use("/listings/:id/reviews", reviews);
+app.use("/listings", listingRouter);
+app.use("/listings/:id/reviews", reviewRouter);
+app.use("/", userRouter);
 
 // 404 handler
 app.use((req, res, next) => {
