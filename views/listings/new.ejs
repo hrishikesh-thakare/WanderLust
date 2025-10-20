@@ -10,6 +10,7 @@
         novalidate
         class="needs-validation"
         enctype="multipart/form-data"
+        id="listing-form"
       >
         <div class="mb-3">
           <label for="title" class="form-label">Title</label>
@@ -84,6 +85,12 @@
           />
           <div class="invalid-feedback">Please provide a valid location!</div>
           <div class="valid-feedback">Looks good!</div>
+          <input
+            type="hidden"
+            name="listing[geometry][coordinates]"
+            id="coordinates"
+            value=""
+          />
         </div>
         <br />
         <button class="btn btn-dark new-btn">Create Listing</button>
@@ -92,4 +99,5 @@
       </form>
     </div>
   </div>
+  <script src="/js/geocode.js"></script>
 </body>

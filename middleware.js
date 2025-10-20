@@ -31,6 +31,28 @@ module.exports.isOwner = async (req, res, next) => {
 };
 
 module.exports.validateListing = (req, res, next) => {
+  // Parse coordinates string to array before validation
+  if (req.body.listing.geometry && req.body.listing.geometry.coordinates) {
+    if (typeof req.body.listing.geometry.coordinates === "string") {
+      // If empty string or invalid, remove geometry field
+      if (req.body.listing.geometry.coordinates.trim() === "") {
+        delete req.body.listing.geometry;
+      } else {
+        const coords = req.body.listing.geometry.coordinates.split(",");
+        req.body.listing.geometry.coordinates = [
+          parseFloat(coords[0]),
+          parseFloat(coords[1]),
+        ];
+      }
+    }
+  } else if (
+    req.body.listing.geometry &&
+    !req.body.listing.geometry.coordinates
+  ) {
+    // If geometry exists but no coordinates, remove it
+    delete req.body.listing.geometry;
+  }
+
   let { error } = listingSchema.validate(req.body);
   if (error) {
     let errMsg = error.details.map((el) => el.message).join(", ");

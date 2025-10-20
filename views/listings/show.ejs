@@ -10,7 +10,6 @@
           alt="listing_image"
         />
         <div class="card-body">
-          <!-- <h6 class="card-title"><%= listing.title %></h6> -->
           <ul class="list-group list-group-flush mb-3">
             <li class="list-group-item">
               <strong>Owned By:</strong>
@@ -148,23 +147,14 @@
   </div>
   <div class="col-8 offset-3 mb-3">
     <h3>Where you'll be</h3>
-    <div id="map"></div>
+    <div
+      id="map"
+      data-lat="<%= (listing.geometry && listing.geometry.coordinates) ? listing.geometry.coordinates[1] : 20.5937 %>"
+      data-lng="<%= (listing.geometry && listing.geometry.coordinates) ? listing.geometry.coordinates[0] : 78.9629 %>"
+      data-location="<%= listing.location %>"
+      data-title="<%= listing.title %>"
+    ></div>
   </div>
 
-  <!-- <script>
-    let maptoken = "<%= process.env.MAP_TOKEN %>";
-    console.log("Map Token:", maptoken);
-    // TO MAKE THE MAP APPEAR YOU MUST
-    // ADD YOUR ACCESS TOKEN FROM
-    // https://account.mapbox.com
-    mapboxgl.accessToken = maptoken;
-    const map = new mapboxgl.Map({
-      container: "map", // container ID
-      style: "mapbox://styles/mapbox/streets-v12", // valid style
-      center: [-74.5, 40], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-      zoom: 9, // starting zoom
-    });
-  </script> -->
-
-  <script src="/js/map.js"></script>
+  <script src="/js/showMap.js"></script>
 </body>
