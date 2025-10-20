@@ -103,3 +103,15 @@ body {
   color: white;
   border: none;
 }
+
+/* Map */
+/* #map {
+  height: 400px;
+  width: 80vh;
+} */
+
+#map {
+  height: 400px;
+  width: 100%;
+  border-radius: 10px;
+}
