@@ -47,6 +47,23 @@ const listingSchema = new Schema({
       default: [0, 0],
     },
   },
+  category: {
+    type: String,
+    enum: [
+      "Beach",
+      "Camping",
+      "Farms",
+      "Arctic",
+      "Cities",
+      "Mountains",
+      "Deserts",
+      "Lakes",
+      "Rooms",
+      "Pools",
+      "Historical",
+    ],
+    default: "Beach",
+  },
 });
 
 listingSchema.post("findOneAndDelete", async (listing) => {

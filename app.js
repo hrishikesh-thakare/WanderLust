@@ -2,7 +2,6 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 
-console.log(process.env.SECRET);
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -70,9 +69,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", (req, res) => {
-  res.send("root is working");
-});
+// app.get("/", (req, res) => {
+//   res.send("root is working");
+// });
 
 // Using the routes
 app.use("/listings", listingRouter);
