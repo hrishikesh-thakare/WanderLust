@@ -20,13 +20,41 @@
       </div>
 
       <div class="navbar-nav ms-auto">
-        <form class="d-flex" role="search">
+        <form class="d-flex" role="search" action="/listings" method="GET">
           <input
             class="form-control me-2 search-input"
             type="search"
+            name="search"
+            list="countries"
             placeholder="Search by country"
             aria-label="Search"
+            value="<%= typeof search !== 'undefined' ? search : '' %>"
           />
+          <!-- <datalist id="countries">
+            <option value="United States"></option>
+            <option value="Italy"></option>
+            <option value="Mexico"></option>
+            <option value="Switzerland"></option>
+            <option value="Tanzania"></option>
+            <option value="Netherlands"></option>
+            <option value="Fiji"></option>
+            <option value="United Kingdom"></option>
+            <option value="Indonesia"></option>
+            <option value="Canada"></option>
+            <option value="Thailand"></option>
+            <option value="United Arab Emirates"></option>
+            <option value="Greece"></option>
+            <option value="Costa Rica"></option>
+            <option value="Japan"></option>
+            <option value="Maldives"></option>
+            <option value="France"></option>
+            <option value="Spain"></option>
+            <option value="Iceland"></option>
+            <option value="Finland"></option>
+            <option value="Norway"></option>
+            <option value="Morocco"></option>
+          </datalist> -->
+
           <button class="btn btn-search" type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>
             Search

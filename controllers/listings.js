@@ -1,17 +1,21 @@
 const Listing = require("../models/listing");
 
 module.exports.index = async (req, res) => {
-  const { category } = req.query; // Get category from query params
+  const { category, search } = req.query; // Get category and search from query params
 
   let filter = {};
   if (category && category !== "All") {
     filter.category = category;
+  }
+  if (search) {
+    filter.country = { $regex: search, $options: "i" }; // Case-insensitive search
   }
 
   const allListings = await Listing.find(filter);
   res.render("listings/index.ejs", {
     allListings,
     selectedCategory: category || "All",
+    searchQuery: search || "",
   });
 };
 
