@@ -39,6 +39,29 @@
                     <div class="valid-feedback">Looks good!</div>
                 </div>
                 
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <select 
+                        name="listing[category]" 
+                        id="category" 
+                        class="form-select"
+                        required
+                    >
+                        <option value="Beach" <%= listing.category === 'Beach' ? 'selected' : '' %>>Beach</option>
+                        <option value="Camping" <%= listing.category === 'Camping' ? 'selected' : '' %>>Camping</option>
+                        <option value="Farms" <%= listing.category === 'Farms' ? 'selected' : '' %>>Farms</option>
+                        <option value="Arctic" <%= listing.category === 'Arctic' ? 'selected' : '' %>>Arctic</option>
+                        <option value="Cities" <%= listing.category === 'Cities' ? 'selected' : '' %>>Cities</option>
+                        <option value="Mountains" <%= listing.category === 'Mountains' ? 'selected' : '' %>>Mountains</option>
+                        <option value="Deserts" <%= listing.category === 'Deserts' ? 'selected' : '' %>>Deserts</option>
+                        <option value="Lakes" <%= listing.category === 'Lakes' ? 'selected' : '' %>>Lakes</option>
+                        <option value="Rooms" <%= listing.category === 'Rooms' ? 'selected' : '' %>>Rooms</option>
+                        <option value="Pools" <%= listing.category === 'Pools' ? 'selected' : '' %>>Pools</option>
+                        <option value="Historical" <%= listing.category === 'Historical' ? 'selected' : '' %>>Historical</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a category.</div>
+                </div>
+
                 <div class="row">
                     <div class="col-md-5 mb-3">
                         <label for="location" class="form-label">Location:</label>

@@ -10,9 +10,10 @@ const sampleListings = [
     price: 1500,
     location: "Malibu",
     country: "United States",
+    category: "Beach",
     geometry: {
       type: "Point",
-      coordinates: [-118.6919, 34.0259], // Malibu, CA
+      coordinates: [-118.6919, 34.0259],
     },
   },
   {
@@ -26,9 +27,10 @@ const sampleListings = [
     price: 1200,
     location: "New York City",
     country: "United States",
+    category: "Cities",
     geometry: {
       type: "Point",
-      coordinates: [-74.006, 40.7128], // NYC
+      coordinates: [-74.006, 40.7128],
     },
   },
   {
@@ -42,9 +44,10 @@ const sampleListings = [
     price: 1000,
     location: "Aspen",
     country: "United States",
+    category: "Mountains",
     geometry: {
       type: "Point",
-      coordinates: [-106.8175, 39.1911], // Aspen, CO
+      coordinates: [-106.8175, 39.1911],
     },
   },
   {
@@ -58,9 +61,10 @@ const sampleListings = [
     price: 2500,
     location: "Florence",
     country: "Italy",
+    category: "Historical",
     geometry: {
       type: "Point",
-      coordinates: [11.2558, 43.7696], // Florence
+      coordinates: [11.2558, 43.7696],
     },
   },
   {
@@ -74,9 +78,10 @@ const sampleListings = [
     price: 800,
     location: "Portland",
     country: "United States",
+    category: "Camping",
     geometry: {
       type: "Point",
-      coordinates: [-122.6765, 45.5152], // Portland, OR
+      coordinates: [-122.6765, 45.5152],
     },
   },
   {
@@ -90,9 +95,10 @@ const sampleListings = [
     price: 2000,
     location: "Cancun",
     country: "Mexico",
+    category: "Beach",
     geometry: {
       type: "Point",
-      coordinates: [-86.8515, 21.1619], // Cancun
+      coordinates: [-86.8515, 21.1619],
     },
   },
   {
@@ -106,9 +112,10 @@ const sampleListings = [
     price: 900,
     location: "Lake Tahoe",
     country: "United States",
+    category: "Lakes",
     geometry: {
       type: "Point",
-      coordinates: [-120.0324, 39.0968], // Lake Tahoe
+      coordinates: [-120.0324, 39.0968],
     },
   },
   {
@@ -122,9 +129,10 @@ const sampleListings = [
     price: 3500,
     location: "Los Angeles",
     country: "United States",
+    category: "Cities",
     geometry: {
       type: "Point",
-      coordinates: [-118.2437, 34.0522], // Los Angeles
+      coordinates: [-118.2437, 34.0522],
     },
   },
   {
@@ -138,9 +146,10 @@ const sampleListings = [
     price: 3000,
     location: "Verbier",
     country: "Switzerland",
+    category: "Mountains",
     geometry: {
       type: "Point",
-      coordinates: [7.2285, 46.0964], // Verbier
+      coordinates: [7.2285, 46.0964],
     },
   },
   {
@@ -154,9 +163,10 @@ const sampleListings = [
     price: 4000,
     location: "Serengeti National Park",
     country: "Tanzania",
+    category: "Camping",
     geometry: {
       type: "Point",
-      coordinates: [34.8333, -2.3333], // Serengeti
+      coordinates: [34.8333, -2.3333],
     },
   },
   {
@@ -170,9 +180,10 @@ const sampleListings = [
     price: 1800,
     location: "Amsterdam",
     country: "Netherlands",
+    category: "Historical",
     geometry: {
       type: "Point",
-      coordinates: [4.9041, 52.3676], // Amsterdam
+      coordinates: [4.9041, 52.3676],
     },
   },
   {
@@ -186,9 +197,10 @@ const sampleListings = [
     price: 10000,
     location: "Fiji",
     country: "Fiji",
+    category: "Beach",
     geometry: {
       type: "Point",
-      coordinates: [178.065, -17.7134], // Fiji
+      coordinates: [178.065, -17.7134],
     },
   },
   {
@@ -202,9 +214,10 @@ const sampleListings = [
     price: 1200,
     location: "Cotswolds",
     country: "United Kingdom",
+    category: "Farms",
     geometry: {
       type: "Point",
-      coordinates: [-1.84, 51.833], // Cotswolds
+      coordinates: [-1.84, 51.833],
     },
   },
   {
@@ -218,9 +231,10 @@ const sampleListings = [
     price: 2200,
     location: "Boston",
     country: "United States",
+    category: "Historical",
     geometry: {
       type: "Point",
-      coordinates: [-71.0589, 42.3601], // Boston
+      coordinates: [-71.0589, 42.3601],
     },
   },
   {
@@ -234,9 +248,10 @@ const sampleListings = [
     price: 1800,
     location: "Bali",
     country: "Indonesia",
+    category: "Beach",
     geometry: {
       type: "Point",
-      coordinates: [115.1889, -8.4095], // Bali
+      coordinates: [115.1889, -8.4095],
     },
   },
   {
@@ -250,9 +265,10 @@ const sampleListings = [
     price: 1500,
     location: "Banff",
     country: "Canada",
+    category: "Mountains",
     geometry: {
       type: "Point",
-      coordinates: [-115.5708, 51.1784], // Banff
+      coordinates: [-115.5708, 51.1784],
     },
   },
   {
@@ -266,9 +282,10 @@ const sampleListings = [
     price: 1600,
     location: "Miami",
     country: "United States",
+    category: "Beach",
     geometry: {
       type: "Point",
-      coordinates: [-80.1918, 25.7617], // Miami
+      coordinates: [-80.1918, 25.7617],
     },
   },
   {
@@ -282,9 +299,10 @@ const sampleListings = [
     price: 3000,
     location: "Phuket",
     country: "Thailand",
+    category: "Pools",
     geometry: {
       type: "Point",
-      coordinates: [98.3923, 7.8804], // Phuket
+      coordinates: [98.3923, 7.8804],
     },
   },
   {
@@ -298,9 +316,10 @@ const sampleListings = [
     price: 4000,
     location: "Scottish Highlands",
     country: "United Kingdom",
+    category: "Historical",
     geometry: {
       type: "Point",
-      coordinates: [-4.4333, 57.4778], // Scottish Highlands
+      coordinates: [-4.4333, 57.4778],
     },
   },
   {
@@ -314,9 +333,10 @@ const sampleListings = [
     price: 5000,
     location: "Dubai",
     country: "United Arab Emirates",
+    category: "Deserts",
     geometry: {
       type: "Point",
-      coordinates: [55.2708, 25.2048], // Dubai
+      coordinates: [55.2708, 25.2048],
     },
   },
   {
@@ -330,9 +350,10 @@ const sampleListings = [
     price: 1100,
     location: "Montana",
     country: "United States",
+    category: "Mountains",
     geometry: {
       type: "Point",
-      coordinates: [-110.3626, 46.8797], // Montana
+      coordinates: [-110.3626, 46.8797],
     },
   },
   {
@@ -346,9 +367,10 @@ const sampleListings = [
     price: 2500,
     location: "Mykonos",
     country: "Greece",
+    category: "Beach",
     geometry: {
       type: "Point",
-      coordinates: [25.3289, 37.4467], // Mykonos
+      coordinates: [25.3289, 37.4467],
     },
   },
   {
@@ -362,9 +384,10 @@ const sampleListings = [
     price: 750,
     location: "Costa Rica",
     country: "Costa Rica",
+    category: "Camping",
     geometry: {
       type: "Point",
-      coordinates: [-84.0907, 9.7489], // Costa Rica
+      coordinates: [-84.0907, 9.7489],
     },
   },
   {
@@ -378,9 +401,10 @@ const sampleListings = [
     price: 1600,
     location: "Charleston",
     country: "United States",
+    category: "Historical",
     geometry: {
       type: "Point",
-      coordinates: [-79.9311, 32.7765], // Charleston
+      coordinates: [-79.9311, 32.7765],
     },
   },
   {
@@ -394,9 +418,10 @@ const sampleListings = [
     price: 2000,
     location: "Tokyo",
     country: "Japan",
+    category: "Cities",
     geometry: {
       type: "Point",
-      coordinates: [139.6917, 35.6895], // Tokyo
+      coordinates: [139.6917, 35.6895],
     },
   },
   {
@@ -410,9 +435,10 @@ const sampleListings = [
     price: 1200,
     location: "New Hampshire",
     country: "United States",
+    category: "Lakes",
     geometry: {
       type: "Point",
-      coordinates: [-71.5724, 43.1939], // New Hampshire
+      coordinates: [-71.5724, 43.1939],
     },
   },
   {
@@ -426,9 +452,10 @@ const sampleListings = [
     price: 6000,
     location: "Maldives",
     country: "Maldives",
+    category: "Beach",
     geometry: {
       type: "Point",
-      coordinates: [73.2207, 3.2028], // Maldives
+      coordinates: [73.2207, 3.2028],
     },
   },
   {
@@ -442,9 +469,10 @@ const sampleListings = [
     price: 4000,
     location: "Aspen",
     country: "United States",
+    category: "Mountains",
     geometry: {
       type: "Point",
-      coordinates: [-106.8175, 39.1911], // Aspen
+      coordinates: [-106.8175, 39.1911],
     },
   },
   {
@@ -458,9 +486,10 @@ const sampleListings = [
     price: 1800,
     location: "Costa Rica",
     country: "Costa Rica",
+    category: "Beach",
     geometry: {
       type: "Point",
-      coordinates: [-84.0907, 9.7489], // Costa Rica
+      coordinates: [-84.0907, 9.7489],
     },
   },
 ];
