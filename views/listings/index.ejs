@@ -64,8 +64,10 @@
                     <div class="card-body">
                         <p class="card-text">
                             <b><%= listing.title %> </b><br>
-                            &#8377 <%= listing.price.toLocaleString("en-IN") %> / night
-                            <i class="tax-info">&nbsp;+&nbsp;18% GST</i>
+                            &#8377; <%= listing.price.toLocaleString("en-IN") %> / night
+                            <i class="tax-info">
+                                <br>Total: &#8377; <%= (listing.price + Math.round(listing.price * 0.18)).toLocaleString("en-IN") %> after taxes
+                            </i>
                         </p>
                     </div>
                 </div>

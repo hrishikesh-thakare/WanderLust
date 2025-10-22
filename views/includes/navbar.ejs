@@ -30,31 +30,6 @@
             aria-label="Search"
             value="<%= typeof search !== 'undefined' ? search : '' %>"
           />
-          <!-- <datalist id="countries">
-            <option value="United States"></option>
-            <option value="Italy"></option>
-            <option value="Mexico"></option>
-            <option value="Switzerland"></option>
-            <option value="Tanzania"></option>
-            <option value="Netherlands"></option>
-            <option value="Fiji"></option>
-            <option value="United Kingdom"></option>
-            <option value="Indonesia"></option>
-            <option value="Canada"></option>
-            <option value="Thailand"></option>
-            <option value="United Arab Emirates"></option>
-            <option value="Greece"></option>
-            <option value="Costa Rica"></option>
-            <option value="Japan"></option>
-            <option value="Maldives"></option>
-            <option value="France"></option>
-            <option value="Spain"></option>
-            <option value="Iceland"></option>
-            <option value="Finland"></option>
-            <option value="Norway"></option>
-            <option value="Morocco"></option>
-          </datalist> -->
-
           <button class="btn btn-search" type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>
             Search
@@ -68,7 +43,26 @@
         <a class="nav-link" href="/signup"><b>Sign Up</b></a>
         <a class="nav-link" href="/login"><b>Login</b></a>
         <% } %> <% if(currUser) { %>
-        <a class="nav-link" href="/logout"><b>Log Out</b></a>
+        <div class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-circle-user"></i>
+            <b><%= currUser.username %></b>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <a class="dropdown-item" href="/logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Log Out
+              </a>
+            </li>
+          </ul>
+        </div>
         <% } %>
       </div>
     </div>
